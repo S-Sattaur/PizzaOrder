@@ -11,4 +11,5 @@ h1 {
 li {
   float: left;
   display: inline;
+  padding: 20px;
 }
