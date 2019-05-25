@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--- Goal is to use all types of forms, proper semantic HTML tags, create a non-functional nav bar and use CSS to beautify the appearance. Leave comments explaining usage and nuances so that you can always come back to understand a specific topic later. --->
+
+<html lang="en">
+  <head>
+    <title> Pizza Creator </title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="HTML / CSS practice sheet.">
+  	<meta name="keywords" content="HTML, CSS, Practice">
+  	<meta name="author" content="Saeed Sattaur">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <main>
+
+      <h1> Welcome to Saeed's Pizza Delivery Service!</h1> <hr>
+      <p> Here at SPD, we strive to make the process of you getting your delicious pizza as easy and simple as possible. </p>
+      <h2> Proceed to pizza customization options. </h2>
+      <form action="/index.html" method="POST">
+
+<!---Potentially replace all section IDs with class attributes. -->
+
+        <section class="CustomerID">
+          <h3> Enter your ID and Password. </h3>
+
+<!---Labels must have the same "for" attribute as the input ID they're referring to. This is a normal text input and password input. Password type inputs censor the text as it's being entered. Each input requires a "name" attribute so when it sends to the form's 'action', it will display as name:value . -->
+
+          <label for="username"> Enter your username. </label>  <br>
+          <input id="username" type="text" name="username"> <br>
+
+          <label for="password"> Enter your password. </label> <br>
+          <input id="password" name="password" type="password">
+        </section>
+
+ <!--- These are number and range inputs. The 'step' attribute controls the little arrows that appear in the text box. Setting the value to 1 means that clicking the arrow once will move the value up or down by 1.
+
+Range inputs require a minimum and maximum value, and typically you'll need some form of a label for what on the slider refers to where, as depicted by the <span>.-->
+
+        <section class="quantity">
+          <label for="numofpizza"> How many pies would you like to order? </label> <br>
+          <input id="numofpizza" name="quantity" type="number" step="1">
+
+          <h3> Alternatively, you can select using our slider. </h3>
+
+          <label for="rangeofpizza"> Slide the boye. </label>
+          <br> <br>
+          <span> 1 </span>
+          <input id="rangeofpizza" name="rangetest" type="range" min="1" max="100" step="1">
+          <span> 100 </span>
+        </section>
+
+  <!---This is a radio type input. Radio type inputs must have a 'value' attribute because once they're ticked, they need to have something to send as the value for their name. Checkboxes are the same. -->
+
+        <section class="CrustSelect">
+          <h3> Select your crust type. </h3>
+          <label for="thincrust"> Thin Crust    </label>
+          <input id="thincrust" name="crust" type="radio" value="thin">
+          <br>
+          <label for="stuffedcrust"> Stuffed Crust </label>
+          <input id="stuffedcrust" name="crust" type="radio" value="stuffed">
+        </section>
+
+        <section class="ToppingSelect">
+          <h3> Select your extra toppings! </h3>
+          <label for="cheese"> Extra Cheese </label>
+          <input id="cheese" name="cheese" type="checkbox" value="yes">
+          <br>
+          <label for="pepperoni"> Pepperoni </label>
+          <input id="pepperoni" name="pepperoni" type="checkbox" value="yes">
+          <br>
+          <label for="jalapenos"> Jalapenos </label>
+          <input id="jalapenos" name="jalapenos" type="checkbox" value="yes">
+        </section>
+
+<!--- Here we're using a datalist and a select element in that order. Datalist usage requires the input type to be set to text and for the input to have the 'list' attribute. The 'list' attribute and the ID of the following "datalist" should be the same.
+
+Both Datalist and Select usage requires <options> to populate them. <Select> usage isn't a type of input, but rather an entirely different element.-->
+
+        <section class="Sauces">
+          <br>
+          <label for="saucelist"> Select your sauce! </label> <br> <br>
+          <input id="saucelist" name="sauces" list="saucelistbaybee" type="text">
+          <datalist id="saucelistbaybee">
+            <option value="Alfredo"> Alfredo </option>
+            <option value="Barbecue"> Barbecue </option>
+            <option value="Marinara"> Marinara </option>
+          </datalist>
+        </section>
+
+        <section class="dessert">
+          <h3> You are offered free dessert. </h3>
+          <label for="DessertChoice"> What do you choose? </label>
+          <select id="DessertChoice" name="Dessert">
+            <option value="cake"> Cake </option>
+            <option value="cookie"> Cookie </option>
+            <option value="milkshake"> Milkshake </option>
+          </select>
+          <br><br>
+        </section>
+
+ <!--- Finally, the <textarea> is an element that is similar to text-type input, but you can specify how large the textbox is by using 'rows' and 'cols'. <textarea> is a separate element from <input>, and should be treated as such.
+
+The submit-type input is important because that's how the form is submitted. There isn't much to say about it. Usually after submission, you should redirect the user to a submission confirmation page or give them some sort of confirmation.-->
+
+        <section class="review">
+          <labxel for="fivestarpls"> Leave a review! </label>
+          <textarea id="fivestarplease" name="review" rows="5" cols="90"> </textarea>
+        </section>
+        <br>
+        <section class="submit">
+          <input type="submit" value="Send">
+        </section>
+
+      </form>
+    </main>
+  </body>
+</html>
